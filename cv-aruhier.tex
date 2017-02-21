@@ -13,25 +13,29 @@
 \newcommand{\babelEN}[1]{\ifnum\pdfstrcmp{\languagename}{english}=0 {#1}\fi}
 
 \usepackage[utf8]{inputenc}
+\usepackage{enumitem}
 
 \usepackage[scale=0.75]{geometry}
-\geometry{hmargin=1.2cm,vmargin=1.3cm}
+\geometry{hmargin=1cm,vmargin=0.8cm}
 
-\setlength{\hintscolumnwidth}{3.4cm}
+\setlength{\hintscolumnwidth}{3.6cm}
 
 % personal data
 \firstname{Anthony}
 \familyname{Ruhier}
 \title{\textsc{Site Reliability Engineer}}
-\address{5 rue de Dublin}{90000}{Belfort, France}
+\address{5 rue de Dublin}{}{90\,000 Belfort, France}
 \mobile{%
     \babelFR{06~88~16~25~58}%
     \babelEN{+33~688~162~558}%
 }
+\homepage{aruhier.fr}
 \email{anthony.ruhier@gmail.com}
 \extrainfo{%
+    \href{https://github.com/Anthony25}{https://github.com/Anthony25}
+    \\
     \babelFR{23 ans (né le 22/10/1993), Français}%
-    \babelEN{23 years old (borned on 10/22/1993), French}%
+    \babelEN{23 years old (born on 10/22/1993), French}%
 }
 
 
@@ -42,55 +46,131 @@
 
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
+\vspace{-3em}
 
     \section{%
         \babelFR{Expériences professionnelles}%
         \babelEN{Work experience}%
     }
-\cventry{2014--2017}{\babelFR{Apprentis Ingénieur Développeur pour un Opérateur Télécom} \babelEN{Apprentice Software Engineer for a local Telecom Operator}}{Trinaps}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
+\cventry{2014--2017}{\babelFR{Apprentis Ingénieur Développeur pour un Opérateur Télécom} \babelEN{Apprentice Software Engineer for a local Telecom Operator}}{Trinaps}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{%
+    \babelFR{TO TRANSLATE}%
+    \babelEN{Lead developer, designing micro-services focused on the automation
+        of redundant processes, linked to the conception of an Information
+        System allowing the company to efficiently store and use its data.}%
+}
 
     \subsection{%
-        \babelFR{Emplois étudiants}%
-        \babelEN{Temporary contracts}%
-    }
-\cventry{2012 (\babelFR{août}\babelEN{August})}{\babelFR{Poste administratif}\babelEN{Administrative work}}{\babelFR{Communauté de communes}\babelEN{Town Hall Administration}}{\babelFR{Saint-Vit (25410)}\babelEN{Saint-Vit (France)}}{}{}
-\cventry{2012 (\babelFR{février}\babelEN{February})}{\babelFR{Opérateur en intérim}\babelEN{Interim worker}}{\babelFR{Groupe Simonin}\babelEN{Group Simonin}}{\babelFR{Beure (25720)}\babelEN{Beure (France)}}{}{}
-
-    \section{%
         \babelFR{Stages}%
-        \babelEN{Internships}%
+        \babelEN{Internship}%
     }
-\cventry{2014 (\babelFR{14 weeks}\babelEN{14 weeks})}{\babelFR{Développement d'un Extranet en Django}\babelEN{Developing an Extranet in Django}}{Trinaps}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}{}
+\cventry{2014 (\babelFR{14 weeks}\babelEN{14 weeks})}{\babelFR{Développement d'un Extranet en Django}\babelEN{Intern developer of a customer dashboard in Django}}{Trinaps}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}{}
+
 
     \section{%
         \babelFR{Diplômes}%
         \babelEN{Qualifications}%
     }
-\cventry{2014--2017}{\babelFR{Ingénieur en Informatique par Apprentissage}\babelEN{Software Engineer}}{UTBM}{\babelFR{Ingénieur en Informatique par Apprentissage}\babelEN{By following an Apprenticeship Program in 3 year}}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
-\cventry{2012--2014}{\babelFR{D.U.T Informatique}\babelEN{HND degree in Software Engineering}}{IUT Belfort-Montbéliard}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
+\cventry{2014--2017}{\babelFR{Ingénieur en Informatique par Apprentissage}\babelEN{Software Engineer}}{UTBM}{\babelFR{Ingénieur en Informatique par Apprentissage}\babelEN{Apprenticeship Program in 3 years}}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
+\cventry{2012--2014}{\babelFR{D.U.T Informatique}\babelEN{Associate's degree in Software Engineering}}{IUT Belfort-Montbéliard}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
 
     \section{%
         \babelFR{Projets}%
         \babelEN{Projects}%
     }
 
+\cvitem{Personal infrastructure{}}
+{\textbf{\babelFR{Infrastructure personnelle visant l'auto-hébergement}\babelEN{Personal infrastructure, to satisfy a will of self-hosting}}%
+\babelFR{TO TRANSLATE}%
+\babelEN{%
+    %\setlist[description]{parsep=0pt,font=\normalfont\itshape}
+    \begin{description}[nolistsep]
+        \item[Web:] Nginx communicating with php-fpm or uWSGI
+        \item[Databases:] PostgreSQL as main DBMS, MariaDB for applications
+            requiring it.
+        \item[Hypervisor:] LXC and KVM (Libvirt as hypervisor) on ArchLinux,
+            with automated backups to a Btrfs NAS, using virt-backup and btrbk.
+        \item [Management:] More than 30 hosts running on ArchLinux, uniformly
+            managed by Ansible from the network configuration to the
+            databases, X.509 certificates and nginx setup.
+        \item[DNS:] Authoritative servers use Knot with automatic DNSSEC
+            signing, resolvers use Unbound.
+        \item [Network:] Hosts are spread into 6 VLAN, via OpenVSwitch
+            and a Cisco switch SG300. Traffic is subject to QoS policies, using
+            PyQoS. IPv4/IPv6 external traffic is dynamically routed through a
+            dedicated server, using OSPF and OpenVPN.
+    \end{description}
+}}
+\vspace{-1em}
+
+\cvitem{%
+    PyQoS \newline{}
+    \textit{\small
+        Python \newline{}
+        Traffic Control \newline{}
+    }
+}{\textbf{\babelFR{Framework Python pour la mise en place de QoS
+sur un serveur Linux}\babelEN{Python framework to setup a QoS on Linux}
+} (\textbf{\textcolor{color1}{\url{https://github.com/Anthony25/pyqos}}})
+    \newline{}
+\babelFR{TO TRANSLATE}\babelEN{
+    Framework to build complex QoS rules for Linux, in a hierarchical way with
+    built-in tweaks. Rules can make use of the Python OOP system to be as much
+    clear as possible. Imported and used at TRINAPS for events setups, to
+    manage the QoS of more than 5K simultaneous users, with a really tight WAN
+    bandwidth (200mbps).
+}}
+
+\cvitem{%
+    Micro-services design \newline{}
+    \textit{\small
+        RESTful API \newline{}
+        RabbitMQ \newline{}
+    }
+}{\textbf{\babelFR{Design de micro-services pour TRINAPS}\babelEN{Design of
+        TRINAPS' micro-services}}
+    \newline{}
+\babelFR{TO TRANSLATE}\babelEN{Conception of the new TRINAPS' micro-services
+    design, become an internal standard. Cross-services communication is based
+    on RESTful APIs, documented by Swagger, and notifications broadcasted by
+    RabbitMQ. Data is versioned and handled by SQLAlchemy.
+}}
+
+\cvitem{%
+    WiFi Captive Portal \newline{}
+    \textit{\small
+        Python (Flask) \newline{}
+        Rust \newline{}
+        Javascript \newline{}
+    }
+}{\textbf{\babelFR{Portail captif utilisé par
+TRINAPS en évènementiel}\babelEN{Captive portal used by TRINAPS in events
+installations}}
+    \newline{}
+\babelFR{TO TRANSLATE}\babelEN{Mainly used for festivals and important events.
+    Used in the Eurockeennes festival since 2014, with 3K connected users. The
+    portal communicates with a router running on Debian, managing a hashmap of
+    MAC addresses efficiently stored in ipset.}}
+\vspace{-1.5em}
+
+
+    \section{%
+        \babelFR{Informatique}%
+        \babelEN{Programming}%
+    }
+
+\cvitem{\babelFR{Programmation impérative}\babelEN{Imperative Programing}}{Python (TDD), Rust, Java (TDD), C, C++}
+
+\cvitem{\babelFR{Programmation web}\babelEN{Web development}}{Django, Flask, Javascript}
+
+
+\cvitem{\babelFR{Autres}\babelEN{Others}}{Bash, RabbitMQ, Docker}
+
+
     \section{%
         \babelFR{Compétences linguistiques}%
         \babelEN{Language skills}%
     }
 \cvitem{\babelFR{Anglais}\babelEN{English}}{\textbf{\babelFR{Niveau C1}\babelEN{C1 Level}}, BULATS -- 85/100 (2016)}
+\babelEN{\cvitem{French}{\textbf{Native speaker}}}
 \cvitem{\babelFR{Espagnol}\babelEN{Spanish}}{\textbf{\babelFR{Niveau scolaire}\babelEN{Basic}}}
-
-    \section{%
-        \babelFR{Informatique}%
-        \babelEN{Computing}%
-    }
-
-\cvitem{\babelFR{Programmation impérative}\babelEN{Imperative Programing}}{Python (TDD), Rust, C, C++, Java (TDD)}
-
-\cvitem{\babelFR{Programmation web}\babelEN{Web development}}{Django, Flask, Javascript}
-
-\cvitem{\babelFR{Autres}\babelEN{Others}}{Bash, PostgreSQL, MySQL}
-
-\cvitem{Github}{\href{https://github.com/Anthony25}{https://github.com/Anthony25}}
 \end{document}
