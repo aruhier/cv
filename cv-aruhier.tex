@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+% this is a document holding multiple languages
+% switch between ENGLISH and GERMAN by commenting one of the following lines:
+\usepackage[french,english]{babel} % makes ENGLISH content
+%\usepackage[english,french]{babel} % makes FRENCH content
+% this is the macro to define phrases in two languages:
+\newcommand{\babel}[2]{\ifnum\pdfstrcmp{\languagename}{english}=0 {#2}\else{#1}\fi}
+\newcommand{\babelFR}[1]{\ifnum\pdfstrcmp{\languagename}{french}=0 {#1}\fi}
+\newcommand{\babelEN}[1]{\ifnum\pdfstrcmp{\languagename}{english}=0 {#1}\fi}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[scale=0.75]{geometry}
+\geometry{hmargin=1.2cm,vmargin=1.3cm}
+
+\setlength{\hintscolumnwidth}{3.4cm}
+
+% personal data
+\firstname{Anthony}
+\familyname{Ruhier}
+\title{\textsc{Site Reliability Engineer}}
+\address{5 rue de Dublin}{90000}{Belfort, France}
+\mobile{%
+    \babelFR{06~88~16~25~58}%
+    \babelEN{+33~688~162~558}%
+}
+\email{anthony.ruhier@gmail.com}
+\extrainfo{%
+    \babelFR{23 ans (né le 22/10/1993), Français}%
+    \babelEN{23 years old (borned on 10/22/1993), French}%
+}
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+    \section{%
+        \babelFR{Expériences professionnelles}%
+        \babelEN{Work experience}%
+    }
+\cventry{2014--2017}{\babelFR{Apprentis Ingénieur Développeur pour un Opérateur Télécom} \babelEN{Apprentice Software Engineer for a local Telecom Operator}}{Trinaps}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
+
+    \subsection{%
+        \babelFR{Emplois étudiants}%
+        \babelEN{Temporary contracts}%
+    }
+\cventry{2012 (\babelFR{août}\babelEN{August})}{\babelFR{Poste administratif}\babelEN{Administrative work}}{\babelFR{Communauté de communes}\babelEN{Town Hall Administration}}{\babelFR{Saint-Vit (25410)}\babelEN{Saint-Vit (France)}}{}{}
+\cventry{2012 (\babelFR{février}\babelEN{February})}{\babelFR{Opérateur en intérim}\babelEN{Interim worker}}{\babelFR{Groupe Simonin}\babelEN{Group Simonin}}{\babelFR{Beure (25720)}\babelEN{Beure (France)}}{}{}
+
+    \section{%
+        \babelFR{Stages}%
+        \babelEN{Internships}%
+    }
+\cventry{2014 (\babelFR{14 weeks}\babelEN{14 weeks})}{\babelFR{Développement d'un Extranet en Django}\babelEN{Developing an Extranet in Django}}{Trinaps}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}{}
+
+    \section{%
+        \babelFR{Diplômes}%
+        \babelEN{Qualifications}%
+    }
+\cventry{2014--2017}{\babelFR{Ingénieur en Informatique par Apprentissage}\babelEN{Software Engineer}}{UTBM}{\babelFR{Ingénieur en Informatique par Apprentissage}\babelEN{By following an Apprenticeship Program in 3 year}}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
+\cventry{2012--2014}{\babelFR{D.U.T Informatique}\babelEN{HND degree in Software Engineering}}{IUT Belfort-Montbéliard}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
+
+    \section{%
+        \babelFR{Projets}%
+        \babelEN{Projects}%
+    }
+
+    \section{%
+        \babelFR{Compétences linguistiques}%
+        \babelEN{Language skills}%
+    }
+\cvitem{\babelFR{Anglais}\babelEN{English}}{\textbf{\babelFR{Niveau C1}\babelEN{C1 Level}}, BULATS -- 85/100 (2016)}
+\cvitem{\babelFR{Espagnol}\babelEN{Spanish}}{\textbf{\babelFR{Niveau scolaire}\babelEN{Basic}}}
+
+    \section{%
+        \babelFR{Informatique}%
+        \babelEN{Computing}%
+    }
+
+\cvitem{\babelFR{Programmation impérative}\babelEN{Imperative Programing}}{Python (TDD), Rust, C, C++, Java (TDD)}
+
+\cvitem{\babelFR{Programmation web}\babelEN{Web development}}{Django, Flask, Javascript}
+
+\cvitem{\babelFR{Autres}\babelEN{Others}}{Bash, PostgreSQL, MySQL}
+
+\cvitem{Github}{\href{https://github.com/Anthony25}{https://github.com/Anthony25}}
+\end{document}
