@@ -1,0 +1,14 @@
+Personal CV [EN,FR]
+===================
+
+CV written in LaTeX using ModernCV, with multilanguage in mind.
+
+The last PDF version is available [here](https://github.com/Anthony25/cv/releases/latest), or you can build it with pdflatex: `pdflatex cv-aruhier.tex`.
+
+To change the language, uncomment one of the lines at line 8:
+```
+%\usepackage[french,english]{babel} % makes ENGLISH content
+% OR
+%\usepackage[english,french]{babel} % makes FRENCH content
+```
+By default, English will be used.
