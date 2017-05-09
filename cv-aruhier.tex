@@ -52,8 +52,11 @@
         \babelFR{Expériences professionnelles}%
         \babelEN{Work experience}%
     }
-\cventry{2014--2017}{\babelFR{Apprentis Ingénieur Développeur pour un Opérateur Télécom} \babelEN{Apprentice Software Engineer for a local Telecom Operator}}{Trinaps}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{%
-    \babelFR{TO TRANSLATE}%
+\cventry{2014--2017}{\babelFR{Apprentis Ingénieur Développeur pour Opérateur Télécom} \babelEN{Apprentice Software Engineer for a local Telecom Operator}}{Trinaps}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{%
+    \babelFR{Lead développeur, concevant des micro-services centrés sur
+        l'automatisation de processus redondants, liés à la conception d'un
+        Système d'Informations permettant à l'entreprise de efficacement ses
+        données.}%
     \babelEN{Lead developer, designing micro-services focused on the automation
         of redundant processes, linked to the conception of an Information
         System allowing the company to efficiently store and use its data.}%
@@ -70,7 +73,7 @@
         \babelFR{Diplômes}%
         \babelEN{Qualifications}%
     }
-\cventry{2014--2017}{\babelFR{Ingénieur en Informatique par Apprentissage}\babelEN{Software Engineer}}{UTBM}{\babelFR{Ingénieur en Informatique par Apprentissage}\babelEN{Apprenticeship Program in 3 years}}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
+\cventry{2014--2017}{\babelFR{Ingénieur en Informatique}\babelEN{Software Engineer}}{UTBM}{\babelFR{Ingénieur par Apprentissage}\babelEN{Apprenticeship Program in 3 years}}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
 \cventry{2012--2014}{\babelFR{D.U.T Informatique}\babelEN{Associate's degree in Software Engineering}}{IUT Belfort-Montbéliard}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{}
 
     \section{%
@@ -80,9 +83,26 @@
 
 \cvitem{Personal infrastructure{}}
 {\textbf{\babelFR{Infrastructure personnelle visant l'auto-hébergement}\babelEN{Personal infrastructure, to satisfy a will of self-hosting}}%
-\babelFR{TO TRANSLATE}%
+\babelFR{
+    \begin{description}[nolistsep]
+        \item[Web:] Nginx communiquant avec php-fpm ou uWSGI
+        \item[SGBD:] PostgreSQL comme principal SGBD, MariaDB pour
+            les applications qui le requièrent.
+        \item[Hyperviseur:] LXC et KVM (Libvirt en tant qu'hyperviseur) sous
+            ArchLinux, avec des sauvegardes automatiques vers un NAS Btrfs, via
+            virt-backup et btrbk.
+        \item [Orchestration:] Plus de 30 serveurs sur ArchLinux, gérés
+            uniformément par Ansible, de la configuration du réseau aux bases
+            de données, certificats X.509 et à la configuration d'Nginx.
+        \item[DNS:] Serveurs d'autorités Knot avec signature DNSSEC
+            automatique, résolveurs Unbound.
+        \item [Réseau:] Les serveurs sont répartis sur 6 VLAN, via OpenVSwitch
+            et un switch Cisco SG300. Le trafic est soumis à des règles de QoS,
+            via PyQoS. Le trafic extérieur IPv4/IPv6 est dynamiquement routé
+            par un serveur dédié, via OSPF et OpenVPN.
+    \end{description}
+}%
 \babelEN{%
-    %\setlist[description]{parsep=0pt,font=\normalfont\itshape}
     \begin{description}[nolistsep]
         \item[Web:] Nginx communicating with php-fpm or uWSGI
         \item[Databases:] PostgreSQL as main DBMS, MariaDB for applications
@@ -108,20 +128,27 @@
         Python \newline{}
         Traffic Control \newline{}
     }
-}{\textbf{\babelFR{Framework Python pour la mise en place de QoS
-sur un serveur Linux}\babelEN{Python framework to setup a QoS on Linux}
+}{\textbf{\babelFR{Framework Python de QoS sous Linux}\babelEN{Python
+        framework to setup a QoS on Linux}
 } (\textbf{\textcolor{color1}{\url{https://github.com/Anthony25/pyqos}}})
     \newline{}
-\babelFR{TO TRANSLATE}\babelEN{
-    Framework to build complex QoS rules for Linux, in a hierarchical way with
-    built-in tweaks. Rules can make use of the Python OOP system to be as much
-    clear as possible. Imported and used at TRINAPS for events setups, to
-    manage the QoS of more than 5K simultaneous users, with a really tight WAN
-    bandwidth (200mbps).
+    \babelFR{
+        Framework pour construire des règles de QoS complexes pour Linux, de
+        façon hiérarchiques tout en embarquant des optimisations prédéfinies.
+        Les règles peuvent prendre avantage du système de POO de Python pour
+        être le plus claires possible. Importé et utilisé à TRINAPS pour les
+        installations évènementielles, pour gérer la QoS de plus de 5K
+        utilisateurs simultanés, sur une bande passant WAN limitée (200mbps).
+    }\babelEN{
+        Framework to build complex QoS rules for Linux, in a hierarchical way
+        with built-in tweaks. Rules can make use of the Python OOP system to be
+        as much clear as possible. Imported and used at TRINAPS for events
+        setups, to manage the QoS of more than 5K simultaneous users, with a
+        really tight WAN bandwidth (200mbps).
 }}
 
 \cvitem{%
-    Micro-services design \newline{}
+    \babelFR{Micro-services}\babelEN{Micro-services design} \newline{}
     \textit{\small
         RESTful API \newline{}
         RabbitMQ \newline{}
@@ -129,38 +156,51 @@ sur un serveur Linux}\babelEN{Python framework to setup a QoS on Linux}
 }{\textbf{\babelFR{Design de micro-services pour TRINAPS}\babelEN{Design of
         TRINAPS' micro-services}}
     \newline{}
-\babelFR{TO TRANSLATE}\babelEN{Conception of the new TRINAPS' micro-services
-    design, become an internal standard. Cross-services communication is based
-    on RESTful APIs, documented by Swagger, and notifications broadcasted by
-    RabbitMQ. Data is versioned and handled by SQLAlchemy.
-}}
+    \babelFR{
+        Conception du design des nouveaux micro-services TRINAPS, devenant le
+        nouveau standard interne. La communication inter-services est basée sur
+        des API RESTful, documentée via Swagger, et sur des notifications via
+        RabbitMQ\@. Les données sont versionnées via SQLAlchemy.
+    }\babelEN{
+        Conception of the new TRINAPS' micro-services design, become an
+        internal standard. Cross-services communication is based on RESTful
+        APIs, documented by Swagger, and notifications broadcasted by RabbitMQ.
+        Data is versioned and handled by SQLAlchemy.
+    }}
 
 \cvitem{%
-    WiFi Captive Portal \newline{}
+    \babelFR{Portail captif WiFi}\babelEN{WiFi Captive Portal} \newline{}
     \textit{\small
         Python (Flask) \newline{}
         Rust \newline{}
         Javascript \newline{}
     }
-}{\textbf{\babelFR{Portail captif utilisé par
-TRINAPS en évènementiel}\babelEN{Captive portal used by TRINAPS in events
+}{\textbf{\babelFR{Portail captif utilisé par TRINAPS en installation
+évènementielle}\babelEN{Captive portal used by TRINAPS in events
 installations}}
     \newline{}
-\babelFR{TO TRANSLATE}\babelEN{Mainly used for festivals and important events.
-    Used in the Eurockeennes festival since 2014, with 3K connected users. The
-    portal communicates with a router running on Debian, managing a hashmap of
-    MAC addresses efficiently stored in ipset.}}
+    \babelFR{
+        Principalement utilisé dans les festivals et évènementiels importants.
+        Utilisé au festival des Eurockéennes depuis 2014, avec 3K utilisateurs
+        connectés. Le portail communique avec un routeur sous Debian, gérant
+        une hashmap d'adresses MAC stockées efficacement dans ipset.
+    }\babelEN{
+        Mainly used for festivals and important events.  Used in the
+        Eurockeennes festival since 2014, with 3K connected users. The portal
+        communicates with a router running on Debian, managing a hashmap of MAC
+        addresses efficiently stored in ipset.
+    }}
 \vspace{-1.5em}
 
 
     \section{%
-        \babelFR{Informatique}%
+        \babelFR{Programmation}%
         \babelEN{Programming}%
     }
 
-\cvitem{\babelFR{Programmation impérative}\babelEN{Imperative Programing}}{Python (TDD), Rust, Java (TDD), C, C++}
+\cvitem{\babelFR{Impérative}\babelEN{Imperative Programing}}{Python (TDD), Rust, Java (TDD), C, C++}
 
-\cvitem{\babelFR{Programmation web}\babelEN{Web development}}{Django, Flask, Javascript}
+\cvitem{\babelFR{Web}\babelEN{Web development}}{Django, Flask, Javascript}
 
 
 \cvitem{\babelFR{Autres}\babelEN{Others}}{Bash, RabbitMQ, Docker}
