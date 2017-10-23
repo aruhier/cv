@@ -25,7 +25,7 @@
 \familyname{Ruhier}
 \title{\textsc{Site Reliability Engineer}\newline{}\normalsize{Looking for an
 internship in Software Engineering in the Bay area}}
-\address{5 rue de Dublin}{}{90\,000 Belfort, France}
+\address{17 rue de la Libération}{}{25\,410 Pouilley-Français, France}
 \mobile{%
     \babelFR{06~88~16~25~58}%
     \babelEN{+33~688~162~558}%
@@ -35,8 +35,8 @@ internship in Software Engineering in the Bay area}}
 \extrainfo{%
     \href{https://github.com/Anthony25}{https://github.com/Anthony25}
     \\
-    \babelFR{23 ans (né le 22/10/1993), Français}%
-    \babelEN{23 years old (born on 10/22/1993), French}%
+    \babelFR{24 ans (né le 22/10/1993), Français}%
+    \babelEN{24 years old (born on 10/22/1993), French}%
 }
 
 
@@ -103,10 +103,10 @@ internship in Software Engineering in the Bay area}}
         \item[Web:] Nginx communiquant avec php-fpm ou uWSGI
         \item[SGBD:] PostgreSQL comme principal SGBD, MariaDB pour
             les applications qui le requièrent.
-        \item[Hyperviseur:] LXC et KVM (Libvirt en tant qu'hyperviseur) sous
-            ArchLinux, avec des sauvegardes automatiques vers un NAS Btrfs, via
-            virt-backup et btrbk.
-        \item [Orchestration:] Plus de 30 serveurs sur ArchLinux, gérés
+        \item[Hyperviseur:] 3 nœud Kubernetes sur KVM (Libvirt en tant
+            qu'hyperviseur) sous Debian, avec des sauvegardes automatiques vers
+            des NAS Glusterfs ZFS et Btrfs via virt-backup et btrbk.
+        \item [Orchestration:] Plus de 30 pods et serveurs sous ArchLinux, gérés
             uniformément par Ansible, de la configuration du réseau aux bases
             de données, certificats X.509 et à la configuration d'Nginx.
         \item[DNS:] Serveurs d'autorités Knot avec signature DNSSEC
@@ -122,12 +122,12 @@ internship in Software Engineering in the Bay area}}
         \item[Web:] HAProxy as ingress controller in Kubernetes, Nginx
         \item[Databases:] PostgreSQL as main DBMS, MariaDB for applications
             requiring it.
-        \item[Hypervisor:] Kubernetes, LXC and KVM (Libvirt as hypervisor) on
-            ArchLinux/Debian, with automated backups to a Btrfs NAS, using
-            virt-backup and btrbk.
-        \item [Management:] More than 30 hosts running on ArchLinux, uniformly
-            managed by Ansible from the network configuration to the databases,
-            X.509 certificates and nginx setup.
+        \item[Hypervisor:] 3 Kubernetes nodes over KVM (Libvirt as hypervisor)
+            on Debian, with automated backups to Btrfs and ZFS Glusterfs NAS,
+            using virt-backup and btrbk.
+        \item [Management:] More than 30 pods and hosts running on ArchLinux,
+            uniformly managed by Ansible from the network configuration to the
+            databases, X.509 certificates and nginx setup.
         \item[DNS:] Authoritative servers use Knot with automatic DNSSEC
             signing, resolvers use Unbound.
         \item [Network:] Hosts are spread into 6 VLAN, via OpenVSwitch and a
