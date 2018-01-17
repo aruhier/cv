@@ -12,6 +12,8 @@
 \newcommand{\babelFR}[1]{\ifnum\pdfstrcmp{\languagename}{french}=0 {#1}\fi}
 \newcommand{\babelEN}[1]{\ifnum\pdfstrcmp{\languagename}{english}=0 {#1}\fi}
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
 
@@ -54,9 +56,8 @@
     }
 \cventry{2014--2017}{\babelFR{Apprentis Ingénieur Développeur pour Opérateur Télécom} \babelEN{Apprentice Software Engineer for a local Telecom Operator}}{Trinaps}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{%
     \babelFR{Lead développeur, concevant des micro-services centrés sur
-        l'automatisation de processus redondants, liés à la conception d'un
-        Système d'Informations permettant à l'entreprise de efficacement ses
-        données.}%
+        l'automatisation de processus redondants, liés à la conception d'un Système
+        d'Informations permettant à l'entreprise de gérer efficacement ses données.}%
     \babelEN{Lead developer, designing micro-services focused on the automation
         of redundant processes, linked to the conception of an Information
         System allowing the company to efficiently store and use its data.}%
@@ -95,11 +96,11 @@
         \babelEN{Projects}%
     }
 
-\cvitem{Personal infrastructure{}}
+\cvitem{\babelFR{Infra.\ personnelle}\babelEN{Personal infrastructure}\newline{}}
 {\textbf{\babelFR{Infrastructure personnelle visant l'auto-hébergement}\babelEN{Personal infrastructure, to satisfy a will of self-hosting}}%
 \babelFR{
     \begin{description}[nolistsep]
-        \item[Web:] Nginx communiquant avec php-fpm ou uWSGI
+        \item[Web:] HAProxy comme ingress controller pour Kubernetes, Nginx
         \item[SGBD:] PostgreSQL comme principal SGBD, MariaDB pour
             les applications qui le requièrent.
         \item[Hyperviseur:] 3 nœud Kubernetes sur KVM (Libvirt en tant
@@ -107,13 +108,14 @@
             des NAS Glusterfs ZFS et Btrfs via virt-backup et btrbk.
         \item [Orchestration:] Plus de 30 pods et serveurs sous ArchLinux, gérés
             uniformément par Ansible, de la configuration du réseau aux bases
-            de données, certificats X.509 et à la configuration d'Nginx.
+            de données, Nginx et certificats X.509.
         \item[DNS:] Serveurs d'autorités Knot avec signature DNSSEC
             automatique, résolveurs Unbound.
         \item [Réseau:] Les serveurs sont répartis sur 6 VLAN, via OpenVSwitch
             et un switch Cisco SG300. Le trafic est soumis à des règles de QoS,
             via PyQoS. Le trafic extérieur IPv4/IPv6 est dynamiquement routé
-            par un serveur dédié, via OSPF et OpenVPN.
+            par un serveur dédié, via OSPF et OpenVPN/IPSec. Résolveurs DNS en
+            anycast. VRRP pour HAProxy via Keepalived.
     \end{description}
 }%
 \babelEN{%
@@ -126,7 +128,7 @@
             using virt-backup and btrbk.
         \item [Management:] More than 30 pods and hosts running on ArchLinux,
             uniformly managed by Ansible from the network configuration to the
-            databases, X.509 certificates and nginx setup.
+            databases, X.509 certificates and Nginx setup.
         \item[DNS:] Authoritative servers use Knot with automatic DNSSEC
             signing, resolvers use Unbound.
         \item [Network:] Hosts are spread into 6 VLAN, via OpenVSwitch and a
@@ -152,9 +154,9 @@
         Framework pour construire des règles de QoS complexes pour Linux, de
         façon hiérarchiques tout en embarquant des optimisations prédéfinies.
         Les règles peuvent prendre avantage du système de POO de Python pour
-        être le plus claires possible. Importé et utilisé à TRINAPS pour les
+        être le plus clair possible. Importé et utilisé à TRINAPS sur les
         installations évènementielles, pour gérer la QoS de plus de 5K
-        utilisateurs simultanés, sur une bande passant WAN limitée (200mbps).
+        utilisateurs simultanés, sur une bande passante WAN limitée (200mbps).
     }\babelEN{
         Framework to build complex QoS rules for Linux, in a hierarchical way
         with built-in tweaks. Rules can make use of the Python OOP system to be
