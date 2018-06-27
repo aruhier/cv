@@ -92,7 +92,7 @@
         \babelEN{Projects}%
     }
 
-\cvitem{\babelFR{Infra.\ personnelle}\babelEN{Personal infrastructure}\newline{}}
+\cvitem{\babelFR{Projet personnel}\babelEN{Personal project}\newline{}}
 {\textbf{\babelFR{Infrastructure personnelle visant l'auto-hébergement}\babelEN{Personal infrastructure, to satisfy a will of self-hosting}}%
 \babelFR{
     \begin{description}[nolistsep]
@@ -137,7 +137,30 @@
 \vspace{-1em}
 
 \cvitem{%
-    PyQoS \newline{}
+    Online/Scaleway \newline{}
+    \textit{\small
+        Python \newline{}
+        Celery \newline{}
+    }
+}{\textbf{\babelFR{Rate limiting de l'entièreté du parc de
+    serveurs}\babelEN{Rate limiting the entire server farm uplinks}
+}
+    \newline{}
+    \babelFR{
+        Mise en place d'un rate limiting dynamique sur plus de 3K switches
+        maison d'Online, variant suivant l'offre du client, avec une taille de
+        burst calculée suffisamment large pour être le moins contraignant
+        possible. Impacte plus de 50K serveurs, a permis d'économiser plusieurs
+        100gbps de bande passante.
+    }\babelEN{
+        Dynamically set rate limiting on 3K Online's custom switches, depending
+        on the customer offer, with a computed burst size large enough to be
+        the least restrictive possible. Impacted more than 50K servers, saved
+        several 100gbps of bandwidth.
+}}
+
+\cvitem{%
+    \babelFR{Projet personnel}\babelEN{Personal project}\newline{}
     \textit{\small
         Python \newline{}
         Traffic Control \newline{}
@@ -161,29 +184,9 @@
         really tight WAN bandwidth (200mbps).
 }}
 
-\cvitem{%
-    \babelFR{Micro-services}\babelEN{Micro-services design} \newline{}
-    \textit{\small
-        RESTful API \newline{}
-        RabbitMQ \newline{}
-    }
-}{\textbf{\babelFR{Design de micro-services pour TRINAPS}\babelEN{Design of
-        TRINAPS' micro-services}}
-    \newline{}
-    \babelFR{
-        Conception du design des nouveaux micro-services TRINAPS, devenant le
-        nouveau standard interne. La communication inter-services est basée sur
-        des API RESTful, documentée via Swagger, et sur des notifications via
-        RabbitMQ\@. Les données sont versionnées via SQLAlchemy.
-    }\babelEN{
-        Conception of the new TRINAPS' micro-services design, become an
-        internal standard. Cross-services communication is based on RESTful
-        APIs, documented by Swagger, and notifications broadcasted by RabbitMQ.
-        Data is versioned and handled by SQLAlchemy.
-    }}
 
 \cvitem{%
-    \babelFR{Portail captif WiFi}\babelEN{WiFi Captive Portal} \newline{}
+    \babelFR{TRINAPS}\babelEN{TRINAPS} \newline{}
     \textit{\small
         Python (Flask) \newline{}
         Rust \newline{}
