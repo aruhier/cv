@@ -109,7 +109,7 @@
 {\textbf{\babelFR{Infrastructure personnelle visant l'auto-hébergement}\babelEN{Personal infrastructure, to satisfy a will of self-hosting}}%
 \babelFR{
     \begin{description}[nolistsep]
-        \item[Web:] HAProxy comme ingress controller pour Kubernetes, Nginx
+        \item[Web:] Nginx comme ingress controller pour Kubernetes.
         \item[SGBD:] PostgreSQL comme principal SGBD, MariaDB pour
             les applications qui le requièrent.
         \item[Hyperviseur:] 3 nœud Kubernetes sur KVM (Libvirt en tant
@@ -123,13 +123,13 @@
         \item [Réseau:] Les serveurs sont répartis sur 6 VLAN, via OpenVSwitch
             et un switch Cisco SG300. Le trafic est soumis à des règles de QoS,
             via PyQoS. Le trafic extérieur IPv4/IPv6 est dynamiquement routé
-            par un serveur dédié, via OSPF et OpenVPN/IPSec. Résolveurs DNS en
-            anycast. VRRP pour HAProxy via Keepalived.
+            par un serveur dédié, via BGP et Wireguard. Résolveurs DNS en
+            anycast.
     \end{description}
 }%
 \babelEN{%
     \begin{description}[nolistsep]
-        \item[Web:] HAProxy as ingress controller in Kubernetes, Nginx
+        \item[Web:] Nginx as ingress controller in Kubernetes.
         \item[Databases:] PostgreSQL as main DBMS, MariaDB for applications
             requiring it.
         \item[Hypervisor:] 3 Kubernetes nodes over KVM (Libvirt as hypervisor)
@@ -142,9 +142,8 @@
             signing, resolvers use Unbound.
         \item [Network:] Hosts are spread into 6 VLAN, via OpenVSwitch and a
             Cisco switch SG300. Traffic is subject to QoS policies, using
-            PyQoS. IPv4/IPv6 external traffic is dynamically routed using OSPF
-            and OpenVPN/IPSec. DNS resolvers in anycast. VRRP for
-            HAProxy with Keepalived.
+            PyQoS. IPv4/IPv6 external traffic is dynamically routed using BGP
+            and Wireguard. DNS resolvers in anycast.
     \end{description}
 }}
 \vspace{-1em}
