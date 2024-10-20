@@ -6,7 +6,7 @@
 % this is a document holding multiple languages
 % switch between ENGLISH and FRENCH by commenting one of the following lines:
 \usepackage[french,english]{babel} % makes ENGLISH content
-%\usepackage[english,french]{babel} % makes FRENCH content
+% \usepackage[english,french]{babel} % makes FRENCH content
 % this is the macro to define phrases in two languages:
 \newcommand{\babel}[2]{\ifnum\pdfstrcmp{\languagename}{english}=0 {#2}\else{#1}\fi}
 \newcommand{\babelFR}[1]{\ifnum\pdfstrcmp{\languagename}{french}=0 {#1}\fi}
@@ -54,17 +54,17 @@
         \babelFR{Expériences professionnelles}%
         \babelEN{Work experience}%
     }
-\cventry{2022}{Software Engineer, Site Reliability Engineer on Borg Node}{Google}{}{\babelFR{Zürich (Suisse)}\babelEN{Zürich (Switzerland)}}{%
+\cventry{2022 -- Now}{Software Engineer, Site Reliability Engineer on Borg Node}{Google}{}{\babelFR{Zürich (Suisse)}\babelEN{Zürich (Switzerland)}}{%
     \babelFR{SRE-SWE travaillant dans l'équipe Borg Node SRE pour gérer et maintenir la stabilité, disponibilité,
-        l'isolation et les performances du coeur de la machinerie Google à grande échelle (~3.5 millions de machines).
+        l'isolation et les performances du coeur de la machinerie Google à grande échelle (\tild{}5 millions de nodes).
         L'équipe Borg Node SRE est spécialisée dans l'architecture et le support d'outils, services, process et règles
         nécessaires pour la gestion de la complexité inhérente au support du parc croissant de Google.}%
     \babelEN{As an SRE-SWE, I work inside the Borg Node SRE team to manage and defends the stability, availability,
-        isolation, and performance of Google's core machinery at scale (~ 3.5 million machines). Borg Node SRE team
+        isolation, and performance of Google's core machinery at scale (\tild{}5 millions nodes). Borg Node SRE team
         specializes in architecting and supporting the tools, services, processes and policies requisite to manage the
         full complexity inherent in supporting Google's growing fleet.}%
 }
-\cventry{2019}{Network Engineer, Software and Automation on CorpNet}{Google}{}{\babelFR{Zürich (Suisse)}\babelEN{Zürich (Switzerland)}}{%
+\cventry{2019 -- 2022}{Network Engineer, Software and Automation on CorpNet}{Google}{}{\babelFR{Zürich (Suisse)}\babelEN{Zürich (Switzerland)}}{%
     \babelFR{Ingénieur réseau focalisé sur le développement et
         l'automatisation, travaillant dans l'équipe Corporate and Entreprise
         Infrastructure pour délivrer la nouvelle génération du réseau et
@@ -77,7 +77,7 @@
         distributed services, abstractions and the components of the system that
         operates and powers Google.}%
 }
-\cventry{2018}{Network DevOps Engineer}{Online/Scaleway}{}{\babelFR{Paris (75116)}\babelEN{Paris (France)}}{%
+\cventry{2018 -- 2019}{Network DevOps Engineer}{Online/Scaleway}{}{\babelFR{Paris (75116)}\babelEN{Paris (France)}}{%
     \babelFR{Travaille avec les SRE backbone sur le maintien et l'amélioration
         du parc, en leur concevant et développant des outils --- principalement
         en Python --- qui leur permettent ensuite de paralléliser et
@@ -87,7 +87,7 @@
         them to parallelize and automate their actions on a larger scale, to target
         a hundred of thousands of users. }%
 }
-\cventry{2014--2017}{\babelFR{Apprenti Ingénieur Développeur pour Opérateur Télécom}\babelEN{Apprentice Software Engineer for a local Telecom Operator}}{Trinaps}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{%
+\cventry{2014 -- 2017}{\babelFR{Apprenti Ingénieur Développeur pour Opérateur Télécom}\babelEN{Apprentice Software Engineer for a local Telecom Operator}}{Trinaps}{}{\babelFR{Belfort (90000)}\babelEN{Belfort (France)}}{%
     \babelFR{Lead développeur, concevant des micro-services centrés sur
         l'automatisation de processus redondants, liés à la conception d'un Système
         d'Informations permettant à l'entreprise de gérer efficacement ses données.}%
@@ -101,7 +101,7 @@
         \babelFR{Diplômes}%
         \babelEN{Qualifications}%
     }
-\cventry{2014--2017}{%
+\cventry{2014 -- 2017}{%
     \babelFR{Ingénieur en Informatique}%
     \babelEN{Master's Degree in C.S}%
 }{UTBM}{%
@@ -115,48 +115,48 @@
         \babelEN{Projects}%
     }
 
-\cvitem{\babelFR{Projet personnel}\babelEN{Personal project}\newline{}}
-{\textbf{\babelFR{Infrastructure personnelle visant l'auto-hébergement}\babelEN{Personal infrastructure, to satisfy a will of self-hosting}}%
-\babelFR{
-    \begin{description}[nolistsep]
-        \item[Web:] Nginx comme ingress controller pour Kubernetes.
-        \item[SGBD:] PostgreSQL comme principal SGBD, MariaDB pour
-            les applications qui le requièrent.
-        \item[Hyperviseur:] 3 nœud Kubernetes sur KVM (Libvirt en tant
-            qu'hyperviseur) sous Debian, avec des sauvegardes automatiques vers
-            des NAS Glusterfs ZFS et Btrfs via virt-backup et btrbk.
-        \item [Orchestration:] Plus de 30 pods et serveurs sous ArchLinux, gérés
-            uniformément par Ansible, de la configuration du réseau aux bases
-            de données, Nginx et certificats X.509.
-        \item[DNS:] Serveurs d'autorités Knot avec signature DNSSEC
-            automatique, résolveurs Unbound.
-        \item [Réseau:] Les serveurs sont répartis sur 6 VLAN, via OpenVSwitch
-            et un switch Cisco SG300. Le trafic est soumis à des règles de QoS,
-            via PyQoS. Le trafic extérieur IPv4/IPv6 est dynamiquement routé
-            par un serveur dédié, via BGP et Wireguard. Résolveurs DNS en
-            anycast.
-    \end{description}
-}%
-\babelEN{%
-    \begin{description}[nolistsep]
-        \item[Web:] Nginx as ingress controller in Kubernetes.
-        \item[Databases:] PostgreSQL as main DBMS, MariaDB for applications
-            requiring it.
-        \item[Hypervisor:] 3 Kubernetes nodes over KVM (Libvirt as hypervisor)
-            on Debian, with automated backups to Btrfs and ZFS Glusterfs NAS,
-            using virt-backup and btrbk.
-        \item [Management:] More than 30 pods and hosts running on ArchLinux,
-            uniformly managed by Ansible from the network configuration to the
-            databases, X.509 certificates and Nginx setup.
-        \item[DNS:] Authoritative servers use Knot with automatic DNSSEC
-            signing, resolvers use Unbound.
-        \item [Network:] Hosts are spread into 6 VLAN, via OpenVSwitch and a
-            Cisco switch SG300. Traffic is subject to QoS policies, using
-            PyQoS. IPv4/IPv6 external traffic is dynamically routed using BGP
-            and Wireguard. DNS resolvers in anycast.
-    \end{description}
+\cvitem{%
+    Google (Borg SRE) \newline{}
+}{\textbf{\babelFR{Lead of the System Overhead Review program}\babelEN{Lead of the System Overhead Review program}
+}
+    \newline{}
+    \babelFR{
+        Owner of the System Container and its resources management, present on every machine in the fleet of Google,
+        isolating the minimal set of OS daemons required for a machine to receive some workload. This area has a usage
+        of a \textit{single digit} PB of RAM and \textit{single digit} millions of CPU cores. I managed and reviewed the resources
+        requests initiated by the daemons developer teams, and improved the process, visibility and monitoring to keep
+        this area under control and budget.
+    }\babelEN{
+        Owner of the System Container and its resources management, present on every machine in the fleet of Google,
+        isolating the minimal set of OS daemons required for a machine to receive some workload. This area has a usage
+        of a \textit{single digit} PB of RAM and \textit{single digit} millions of CPU cores. I managed and reviewed the resources
+        requests initiated by the daemons developer teams, and improved the process, visibility and monitoring to keep
+        this area under control and budget.
 }}
-\vspace{-1em}
+
+\cvitem{%
+    Google (Network) \newline{}
+    \textit{\small
+        Go \newline{}
+    }
+}{\textbf{\babelFR{Automation of operations on the Corp Backbone}\babelEN{Automation of operations on the Corp Backbone}
+}
+    \newline{}
+    \babelFR{
+        With the upcoming deprecation of several internal tools, certain common operations on the Corp Backbone were
+        risking to lose their automation. I worked on designing several central services, working in synergy with other
+        services designed by my team members, to re-implement the entire automation of the Corp Backbone from scratch
+        in order to modernize it and align it with the  Prod Network. The services I designed and implemented are used
+        in every turn-up of a backbone device, specifically for the interconnection with the rest of the network. This
+        scope of this area went from the intent automation to the configuration pushed on the network devices.
+    }\babelEN{
+        With the upcoming deprecation of several internal tools, certain common operations on the Corp Backbone were
+        risking to lose their automation. I worked on designing several central services, working in synergy with other
+        services designed by my team members, to re-implement the entire automation of the Corp Backbone from scratch
+        in order to modernize it and align it with the  Prod Network. The services I designed and implemented are used
+        in every turn-up of a backbone device, specifically for the interconnection with the rest of the network. This
+        scope of this area went from the intent automation to the configuration pushed on the network devices.
+}}
 
 \cvitem{%
     Online/Scaleway \newline{}
@@ -207,44 +207,62 @@
 }}
 
 
-\cvitem{%
-    \babelFR{TRINAPS}\babelEN{TRINAPS} \newline{}
-    \textit{\small
-        Python (Flask) \newline{}
-        Rust \newline{}
-        Javascript \newline{}
-    }
-}{\textbf{\babelFR{Portail captif utilisé par TRINAPS en installation
-évènementielle}\babelEN{Captive portal used by TRINAPS in events
-installations}}
-    \newline{}
-    \babelFR{
-        Principalement utilisé dans les festivals et évènementiels importants.
-        Utilisé au festival des Eurockéennes depuis 2014, avec 3K utilisateurs
-        connectés. Le portail communique avec un routeur sous Debian, gérant
-        une hashmap d'adresses MAC stockées efficacement dans ipset.
-    }\babelEN{
-        Mainly used for festivals and important events.  Used in the
-        Eurockeennes festival since 2014, with 3K connected users. The portal
-        communicates with a router running on Debian, managing a hashmap of MAC
-        addresses efficiently stored in ipset.
-    }}
+\cvitem{\babelFR{Projet personnel}\babelEN{Personal project}\newline{}}
+{\textbf{\babelFR{Infrastructure personnelle visant l'auto-hébergement}\babelEN{Personal infrastructure, to satisfy a will of self-hosting}}%
+\babelFR{
+    \begin{description}[nolistsep]
+        \item[Web:] Nginx comme ingress controller pour Kubernetes.
+        \item[SGBD:] PostgreSQL comme principal SGBD, MariaDB pour
+            les applications qui le requièrent.
+        \item[Hyperviseur:] 3 nœud Kubernetes sur KVM (Libvirt en tant
+            qu'hyperviseur) sous Debian, avec des sauvegardes automatiques vers
+            des NAS iSCSI+NFS ZFS via virt-backup et zrepl.
+        \item [Orchestration:] Plus de 30 pods et serveurs sous ArchLinux, gérés
+            uniformément par Ansible, de la configuration du réseau aux bases
+            de données, Nginx et certificats X.509.
+        \item[DNS:] Serveurs d'autorités Knot avec signature DNSSEC
+            automatique, résolveurs Unbound.
+        \item [Réseau:] Les serveurs sont répartis sur 6 VLAN, via OpenVSwitch
+            et un switch Mikrotik SFP+. Le trafic est soumis à des règles de QoS,
+            via PyQoS. Le trafic extérieur IPv4/IPv6 est dynamiquement routé
+            par un serveur dédié, via BGP et Wireguard. Résolveurs DNS en
+            anycast.
+    \end{description}
+}%
+\babelEN{%
+    \begin{description}[nolistsep]
+        \item[Web:] Nginx as ingress controller in Kubernetes.
+        \item[Databases:] PostgreSQL as main DBMS, MariaDB for applications
+            requiring it.
+        \item[Hypervisor:] 3 Kubernetes nodes over KVM (Libvirt as hypervisor)
+            on Debian, with automated backups to 2 ZFS iSCSI+NFS NAS,
+            using virt-backup and zrepl.
+        \item [Management:] More than 30 pods and hosts running on ArchLinux,
+            uniformly managed by Ansible from the network configuration to the
+            databases, X.509 certificates and Nginx setup.
+        \item[DNS:] Authoritative servers use Knot with automatic DNSSEC
+            signing, resolvers use Unbound.
+        \item [Network:] Hosts are spread into 6 VLAN, via OpenVSwitch and a
+            Mikrotik SFP+ switch. Traffic is subject to QoS policies, using
+            PyQoS. IPv4/IPv6 external traffic is dynamically routed using BGP
+            and Wireguard. DNS resolvers in anycast.
+    \end{description}
+}}
+
 \vspace{-1.5em}
 
-
-\newpage
     \section{%
         \babelFR{Programmation}%
         \babelEN{Programming}%
     }
 
-\cvitem{\babelFR{Impérative}\babelEN{Imperative Programing}}{Python (TDD), Rust, Java (TDD), C, C++}
+\cvitem{\babelFR{Impérative}\babelEN{Imperative Programing}}{Go \textit{(Readability from Google)}, Python \textit{(TDD)}, Rust}
 
 \cvitem{\babelFR{Web}\babelEN{Web development}}{Django, Flask, Javascript}
 
 
 \cvitem{\babelFR{Autres}\babelEN{Others}}{
-    Bash, RabbitMQ, Docker
+    Ansible, Helm, Shell, SQL
 }
 
 
@@ -254,4 +272,5 @@ installations}}
     }
 \cvitem{\babelFR{Anglais}\babelEN{English}}{\textbf{\babelFR{Niveau C1}\babelEN{C1 Level}}, BULATS -- 85/100 (2016)}
 \babelEN{\cvitem{French}{\textbf{Native speaker}}}
+\babelEN{\cvitem{German}{\textbf{B1 Level}}}
 \end{document}
